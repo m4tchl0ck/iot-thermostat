@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Thermostat</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        button {
+            border: .0625rem solid var(--button-border-color);
+        }
+
+        div {
+            text-align: center; 
+            padding: .5rem;
+            vertical-align: middle;
+        }
+
+        button {
+            font-size: 6em;
+        }
+
+        #settings {
+            text-align: left; 
+        }
+
+        .icon {
+            vertical-align: top;
+            font-size: 5em;
+            width: 2.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div>
+            <span class="icon">&#x1f321;</span>
+            <span id="temperature-error" class="icon">&#9888;</span>
+            <span id="current-temperature" style="font-size: 15em; padding: 5px;">--</span>
+            <button type="button" onclick="getTemperature()">&#9842;</button>
+        </div>
+        <div>
+            <input id="required-temperature" style="font-size: 8em; width: 2.2em; padding: 5px;" type="number" maxlength="2">
+            <button type="button" onclick="setRequiredTemperature()">&#x1f4be;</button>
+        </div>
+        <div>
+            <button id="activate" style="color: green" type="button" onclick="activate()">Activate</button>
+            <button id="deactivate" style="color: red" type="button" onclick="deactivate()">Deactivate</button>
+        </div>
+        <div>
+            <span class="icon">&#128293;</span>
+            <button id="on" style="color: green" type="button" onclick="on()">On</button>
+            <button id="off" style="color: red" type="button" onclick="off()">Off</button>
+        </div>
+        <div>
+            <button type="button" onclick="showSettings()">&#x2699;</button>
+        </div>
+    </div>
+    <div id="settings">
+        <div>
+            <span style="font-size: 3.5em;">ssid: </span>
+            <input id="ssid" style="font-size: 2.5em; padding: 5px;" type="text" maxlength="20">
+        </div>
+        <div>
+            <span style="font-size: 3.5em;">pass: </span>
+            <input id="pass" style="font-size: 2.5em; padding: 5px;" type="password" maxlength="20">
+        </div>
+        <div>
+            <button type="button" onclick="showMain()">&#11199;</button>
+            <button type="button" onclick="saveSettings()">&#x1f4be;</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
